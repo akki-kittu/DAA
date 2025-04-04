@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISE Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-vr-cardboard"></i>
+                <h2>ISE System</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>Child Profiles</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-scenario-tree"></i>
+                        <span>VR Scenarios</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Progress Reports</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header">
+                <div class="greeting">
+                    <h1>Welcome, Educator</h1>
+                    <p>Monitor and guide learning sessions</p>
+                </div>
+                <div class="user-controls">
+                    <button class="btn btn-outline">
+                        <i class="fas fa-calendar"></i> Schedule
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i> New Session
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Eye Contact</h3>
+                        <span class="badge badge-success">Improving</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="eye-contact-progress"></div>
+                        </div>
+                        <div class="progress-labels">
+                            <span>0%</span>
+                            <span id="eye-contact-value">65%</span>
+                            <span>100%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Verbal Response</h3>
+                        <span class="badge badge-warning">Needs Practice</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="verbal-response-progress"></div>
+                        </div>
+                        <div class="progress-labels">
+                            <span>0%</span>
+                            <span id="verbal-response-value">42%</span>
+                            <span>100%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Current Session</h3>
+                        <i class="fas fa-circle" style="color: #4caf50;"></i>
+                    </div>
+                    <p>Scenario: <strong id="current-scenario">Classroom Introduction</strong></p>
+                    <p>Duration: <strong id="session-duration">12:45</strong> minutes</p>
+                    <p>Difficulty: <strong id="session-difficulty">3/5</strong></p>
+                </div>
+            </div>
+
+            <!-- VR Viewport -->
+            <div class="card vr-container">
+                <div id="vr-viewport">
+                    <div class="vr-placeholder">
+                        <h2>VR Session Active</h2>
+                        <p>Connect headset to view live session</p>
+                    </div>
+                </div>
+                <div class="vr-controls">
+                    <button class="vr-btn" id="pause-btn">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                    <button class="vr-btn" id="calm-btn">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="vr-btn" id="hint-btn">
+                        <i class="fas fa-lightbulb"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Session History -->
+            <div class="card session-history">
+                <h3 class="card-title">Recent Sessions</h3>
+                <table class="session-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Scenario</th>
+                            <th>Duration</th>
+                            <th>Performance</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody id="session-data">
+                        <!-- Filled by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
